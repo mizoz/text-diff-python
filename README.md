@@ -1,24 +1,31 @@
 # Text Diff Python
 
-A Python library and CLI tool to compare and show differences between text files.
+[![PyPI Version](https://img.shields.io/pypi/v/text-diff-python?style=flat-square)](https://pypi.org/project/text-diff-python/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/text-diff-python?style=flat-square)](https://pypi.org/project/text-diff-python/)
+[![License](https://img.shields.io/pypi/l/text-diff-python?style=flat-square)](LICENSE)
+[![Python Version](https://img.shields.io/pypi/pyversions/text-diff-python?style=flat-square)](https://pypi.org/project/text-diff-python/)
+[![GitHub Stars](https://img.shields.io/github/stars/mizoz/text-diff-python?style=flat-square)](https://github.com/mizoz/text-diff-python)
+
+> A Python CLI tool for comparing and showing differences between text files.
 
 ## Features
 
+- Compare two text files
 - Side-by-side diff view
 - Unified diff format
-- Word-level diff highlighting
+- Word-level diff
 - Ignore whitespace option
-- Color output in terminal
-- Compare directories
 - Python API for integration
 
 ## Installation
+
+### From PyPI
 
 ```bash
 pip install text-diff-python
 ```
 
-Or clone and install:
+### From Source
 
 ```bash
 git clone https://github.com/mizoz/text-diff-python.git
@@ -38,42 +45,45 @@ text-diff file1.txt file2.txt
 text-diff --unified file1.txt file2.txt
 
 # Word-level diff
-text-diff --word-diff file1.txt file2.txt
-
-# Ignore whitespace
-text-diff --ignore-whitespace file1.txt file2.txt
-
-# Compare directories
-text-diff ./dir1 ./dir2
+text-diff --words file1.txt file2.txt
 ```
 
 ### Python API
 
 ```python
-from text_diff import TextDiff
+from text_diff import TextDiffer
 
-diff = TextDiff()
+differ = TextDiffer()
 
-# Compare two strings
-result = diff.compare("Hello World", "Hello Universe")
-print(result)
-
-# Compare files
-result = diff.compare_files("file1.txt", "file2.txt")
-print(result)
+# Compare texts
+diff = differ.compare("Hello World", "Hello Universe")
+print(diff)
 ```
 
-## Options
+## CLI Options
 
-- `-u, --unified` - Show unified diff format
-- `-w, --word-diff` - Show word-level differences
-- `-i, --ignore-whitespace` - Ignore whitespace changes
-- `-c, --color` - Enable colored output
+| Option | Description |
+|--------|-------------|
+| `-u, --unified` | Unified diff format |
+| `-w, --words` | Word-level diff |
+
+## Requirements
+
+- Python 3.7+
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License
+This project is licensed under the MIT License.
 
 ## Author
 
-mizoz
+**mizoz**
+- GitHub: [@mizoz](https://github.com/mizoz)
+
+---
+
+⭐ If you find this project useful, please consider giving it a star on GitHub!
